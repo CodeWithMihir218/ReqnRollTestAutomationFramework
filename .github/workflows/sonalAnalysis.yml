@@ -63,17 +63,15 @@ jobs:
           /k:"CodeWithMihir218_ReqnRollTestAutomationFramework" \
           /o:"codewithmihir218" \
           /d:sonar.token="${{ secrets.SONAR_TOKEN }}" \
-          /d:sonar.host.url="https://sonarcloud.io" \
-          /d:sonar.cs.nunit.reportsPaths="**/TestResults/*.xml" \
-          /d:sonar.cs.opencover.reportsPaths="**/coverage.opencover.xml"
+          /d:sonar.host.url="https://sonarcloud.io"
         
         dotnet build TestAutomationFramework/TestAutomationFramework.sln --no-restore
         
-        # Run tests with coverage (optional but recommended)
-        dotnet test TestAutomationFramework/TestAutomationFramework.sln \
-          --no-build --verbosity normal \
-          --collect:"XPlat Code Coverage" \
-          --results-directory ./TestResults/ \
-          --logger trx
+        # Skip test execution - only static code analysis
+        # dotnet test TestAutomationFramework/TestAutomationFramework.sln \
+        #   --no-build --verbosity normal \
+        #   --collect:"XPlat Code Coverage" \
+        #   --results-directory ./TestResults/ \
+        #   --logger trx
         
         ./.sonar/scanner/dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
