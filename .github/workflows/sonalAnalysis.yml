@@ -60,8 +60,8 @@ jobs:
       shell: bash
       run: |
         ./.sonar/scanner/dotnet-sonarscanner begin \
-          /k:"YOUR_PROJECT_KEY" \
-          /o:"YOUR_ORG_KEY" \
+          /k:"CodeWithMihir218_ReqnRollTestAutomationFramework" \
+          /o:"mihir-dash" \
           /d:sonar.token="${{ secrets.SONAR_TOKEN }}" \
           /d:sonar.host.url="https://sonarcloud.io" \
           /d:sonar.cs.nunit.reportsPaths="**/TestResults/*.xml" \
