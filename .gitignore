@@ -1,0 +1,71 @@
+# Build artifacts
+bin/
+obj/
+*.dll
+*.exe
+*.app
+*.log
+
+# Rider / VS Code / Visual Studio settings
+.idea/
+.vscode/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.vs/
+
+# NuGet packages
+*.nupkg
+packages/
+*.snupkg
+
+# Test results
+TestResults/
+*.trx
+*.coverage
+*.coveragexml
+*.codecoverage
+*.json
+
+# ✅ EXCEPTION: Keep appsettings.json and reqnroll.json
+!appsettings.json
+!reqnroll.json
+
+# Logs & Report Files
+Reports/
+*.html
+*.pdf
+*.db
+
+# Reqnroll generated artifacts
+*.feature.cs
+
+# Screenshots or outputs
+Screenshots/
+output/
+
+# OS-generated
+.DS_Store
+Thumbs.db
+
+# Resharper/JetBrains settings
+_ReSharper*/
+*.DotSettings.user
+
+# WebDriver executables
+chromedriver.exe
+geckodriver.exe
+msedgedriver.exe
+
+# Dotnet environment
+*.dotnet-tools.json
+
+# Other config artifacts
+*.tmp
+*.bak
+*.old
+*.orig
+
+# Local development config override
+appsettings.Development.json
