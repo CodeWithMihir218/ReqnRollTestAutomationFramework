@@ -63,7 +63,9 @@ jobs:
           /k:"CodeWithMihir218_ReqnRollTestAutomationFramework" \
           /o:"codewithmihir218" \
           /d:sonar.token="${{ secrets.SONAR_TOKEN }}" \
-          /d:sonar.host.url="https://sonarcloud.io"
+          /d:sonar.host.url="https://sonarcloud.io" \
+          /d:sonar.exclusions="**/bin/**,**/obj/**,**/packages/**,**/.sonar/**,**/.vs/**,**/TestResults/**,**/runtimes/**,**/Features/**/*.feature.cs" \
+          /d:sonar.coverage.exclusions="**/Features/**,**/Steps/**,**/Hooks/**,**/bin/**,**/obj/**,**/runtimes/**"
         
         dotnet build TestAutomationFramework/TestAutomationFramework.sln --no-restore
         
